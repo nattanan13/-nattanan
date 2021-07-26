@@ -36,6 +36,6 @@ while True:
     print(player2, "takes the last stick.")
     print("I WON (Python won) ")
     break
-
+print("bonus")
 
 
