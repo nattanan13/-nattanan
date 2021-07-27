@@ -17,7 +17,7 @@ while sticks > 0 :
     sticks -= take1
     print("I take " + str(take1) + " stick, there are " + str(sticks) + " sticks in the pile. ")
   if sticks <= 0:
-    print(" AI takes the last stick,")
+    print("chiAI takes the last stick,")
     print(player2," WON ")
     break
 #player2 (people)
@@ -36,3 +36,4 @@ while sticks > 0 :
 
 
 
+ 
