@@ -1,35 +1,33 @@
 print("The Stick in the Pile Game")
 player2 = str(input("What's your name? : "))
 sticks = int(input("How many sticks in the pile? : "))
+Max_take = int(input("The maximum amount that can be took: "))
 
 while sticks > 0 :
   print("There are " + str(sticks) + " sticks in the pile ")
 
 #player1 (AI)
 
-  if sticks ==2 or sticks % 3 == 2:
+  if sticks % Max_take+1 == Max_take:
     take1 = 1
     sticks -= take1
-    print("I take " + str(take1) + " stick, there are " + str(sticks) +
-          " sticks in the pile. ")
+    print("I take " + str(take1) + " stick, there are " + str(sticks) + " sticks in the pile. ")
   else:
-    take1 = 2
+    take1 = random.randint(1, Max_take)
     sticks -= take1
-    print("I take " + str(take1) + " stick, there are " + str(sticks) + 
-          " sticks in the pile. ")
-
+    print("I take " + str(take1) + " stick, there are " + str(sticks) + " sticks in the pile. ")
 
 #player2 (people)
-
-  take2 = int(input("How many you will take (1 or 2): "))
-  if take2 == 1 or take2 == 2:
+  
+  take2 = int(input("How many you will take: "))
+  if take2 <= Max_take:
     sticks -= take2
   else: 
-    print("Plese take only 1 or 2 stick")
-    take2 = int(input("How many you will take (1 or 2): "))
+    print("No! you can't take more less than 1 stick!")
+    take2 = int(input("How many you will take: "))
     sticks -= take2
 
-  if sticks == 0:
+  if sticks== 0:
     print(player2, "takes the last stick,")
     print("I WON (Python won) ")
     break
