@@ -1,14 +1,17 @@
-a = input('Enter the first number: ')
-b = input('Enter the second number: ')
-c = input('Enter the third number: ')
-d = input('Enter the last number: ')
+a = input("Enter the first number: ")
+b = input("Enter the second number: ")
+c = input("Enter the third number: ")
+d = input("Enter the last number: ")
 
-L = [a,b,c,d]
-
+L =[]
+# itertools.permutations use str
 import itertools
-y = list(itertools.permutations([L]))
+y = list(itertools.permutations([a,b,c,d]))
 
-print(y)
+for i in y:
+  x = ""
+  for j in i:
+    x = x + j
+  L.append(x)
 
-
-
+print('The largest formed number is',max(L))
